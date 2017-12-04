@@ -5,7 +5,7 @@
 #ifndef MESSAGING_H
 #define MESSAGING_H
 
-/* Pipe Functions */
+/* Pipes */
 
 void readFromPipe(int file, char *buf) {
 	FILE *stream = fdopen(file, "r");
@@ -15,17 +15,16 @@ void readFromPipe(int file, char *buf) {
 		++i;
 	}
 	buf[i] = '\0';
-	fclose(stream);
 }
 
 void writeToPipe(int file, char *buf) {
 	FILE *stream = fdopen(file, "w");
 	fprintf(stream, buf);
-	fclose(stream);
+	fflush(stream);
 }
 
 
-/* Message Queue Functions */
+/* Message Queue */
 
 #define MSGQ_PAYLOAD_LEN 32
 
@@ -39,5 +38,9 @@ void initMsgBuf(msgbuf_t *buf, const char *cstr) {
 	bzero(buf->mtext, MSGQ_PAYLOAD_LEN);
 	strncpy(buf->mtext, cstr, MSGQ_PAYLOAD_LEN-1);
 }
+
+/* Shared Memory */
+
+#define SHMSIZE 16384
 
 #endif
