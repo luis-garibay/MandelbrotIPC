@@ -82,8 +82,6 @@ int main(int argc, const char *argv[]) {
 		close(child1ToChild2Pipe[1]);
 
 		execvp(MANDEL_CALC_EXECUTABLE, mcargs);
-
-		exit(0);
 	}
 	
 	/****
@@ -98,8 +96,6 @@ int main(int argc, const char *argv[]) {
 		close(child1ToChild2Pipe[0]);
 
 		execvp(MANDEL_DISPLAY_EXECUTABLE, mdargs);
-
-		exit(0);
 	}
 
 	/* close unused pipe ends */
