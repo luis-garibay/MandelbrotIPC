@@ -7,7 +7,7 @@
 #include <sys/msg.h>
 #include <sys/shm.h>
 
-#include "messaging.h"
+#include "communication.h"
 
 #define STDIN 0
 
