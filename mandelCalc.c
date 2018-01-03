@@ -42,9 +42,9 @@ int main(int argc, char *argv[]) {
 			deltaY = (yMax - yMin)/(nRows - 1);
 
 		int r, c, n;
-		for (r = 0; r < nRows-1; ++r) {
+		for (r = 0; r < nRows; ++r) {
 			float Cy = yMin + r * deltaY;
-			for (c = 0; c < nCols-1; ++c) {
+			for (c = 0; c < nCols; ++c) {
 				float Cx = xMin + c * deltaX,
 						Zx=0.0, Zy=0.0;
 				for (n = 0; n < maxIter; ++n) {
