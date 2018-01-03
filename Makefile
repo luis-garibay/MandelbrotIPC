@@ -1,6 +1,4 @@
-# Luis Garibay ; lgaribay
-
-CFLAGS=-ggdb
+CFLAGS=
 
 mandelbrot: mandelbrot-lgarib2.c mandelCalc-lgarib2.c mandelDisplay-lgarib2.c
 	gcc $(CFLAGS) -o mandelbrot mandelbrot-lgarib2.c

@@ -19,7 +19,7 @@ void readFromPipe(int file, char *buf) {
 
 void writeToPipe(int file, char *buf) {
 	FILE *stream = fdopen(file, "w");
-	fprintf(stream, buf);
+	fprintf(stream, "%s", buf);
 	fflush(stream);
 }
 
